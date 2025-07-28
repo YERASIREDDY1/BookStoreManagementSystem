@@ -70,6 +70,7 @@ public class BookService {
 		}
 		throw new IdNotFoundException("unable to update the book as the id is not found");
 	}
+	
 	public ResponseEntity<ResponseStructure<String>> deleteBook(int id){
 		Optional<Book> opt=bookDao.getBookById(id);
 		ResponseStructure<String> response=new ResponseStructure<String>();
