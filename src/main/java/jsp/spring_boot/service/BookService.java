@@ -194,8 +194,8 @@ public class BookService {
 		throw new NoRecordAvailableException("BOOKS are not available in the database");
 	}
 	
-	public ResponseEntity<ResponseStructure<Page<Book>>> getBookByPaginationAndSorting(int pageNumber,int pageSize,String field){
-		Page<Book> book=bookDao.getBookByPaginationAndSorting(pageNumber, pageSize,field);
+	public ResponseEntity<ResponseStructure<Page<Book>>> getBookByPaginationAndSorting(int pageNumber,int pageSize,String fields){
+		Page<Book> book=bookDao.getBookByPaginationAndSorting(pageNumber, pageSize,fields);
 		if(!book.isEmpty()) {
 		ResponseStructure<Page<Book>> response=new ResponseStructure<Page<Book>>();
 		response.setStatusCode(HttpStatus.OK.value());
